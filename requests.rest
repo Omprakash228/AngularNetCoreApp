@@ -1,1 +1,20 @@
-GET http://localhost:5000/api/values/5
+GET http://localhost:5000/api/values/1
+Authorization: Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiIxIiwidW5pcXVlX25hbWUiOiJvbXByYWthc2giLCJuYmYiOjE1OTY4MDQ1MjQsImV4cCI6MTU5Njg5MDkyNCwiaWF0IjoxNTk2ODA0NTI0fQ.Lh64mNnfCe01eTvLWuX5-opcwp0q2Lcex4IiyNhYf1sAYpjoaZihxZmKHUlXhB_YIb7DyN0IAHPJ-t0KRuFWTQ
+
+###
+POST http://localhost:5000/api/auth/register
+Content-Type: application/json
+
+{
+    "username": "Omprakash",
+    "password": "password"
+}
+
+###
+POST http://localhost:5000/api/auth/login
+Content-Type: application/json
+
+{
+    "username": "Omprakash",
+    "password": "password"
+}
