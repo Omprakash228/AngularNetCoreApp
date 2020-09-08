@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Component({
   selector: 'app-value',
@@ -16,7 +16,11 @@ export class ValueComponent implements OnInit {
   }
 
   getValues() {
-    this.http.get('http://localhost:5000/api/values').subscribe(response => {
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${localStorage.getItem('token')}`
+    })
+    this.http.get('http://localhost:5000/api/values', {headers: headers}).subscribe(response => {
       this.values = response;
     }, error => {
       console.log(error);
